@@ -3,10 +3,9 @@ from streamlit_chat import message
 from utils import query_from_API
 
 st.set_page_config(
-    page_title="Chatbot",
+    page_title="ndhieunguyen chatbot",
     page_icon="🤖",
 )
-
 
 query = st.sidebar.text_area("You:", "", placeholder="Say something...", height=256)
 with st.spinner("Generating..."):
@@ -19,4 +18,4 @@ with st.spinner("Generating..."):
         st.session_state["message"].append((response, False))
 
         for mess, is_user in st.session_state["message"]:
-            message(mess, is_user=is_user)
+            message(message=mess, is_user=is_user)
